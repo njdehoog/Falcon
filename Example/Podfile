@@ -2,10 +2,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Falcon', :exclusive => true do
   pod "Falcon", :path => "../"
+  pod 'Mantle', '~> 1.5'
 end
 
 target 'Tests', :exclusive => true do
-  pod "Falcon", :path => "../"
-
-  
+  pod "Falcon", :path => "../"  
 end

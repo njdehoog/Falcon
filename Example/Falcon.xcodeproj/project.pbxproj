@@ -23,6 +23,127 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>1610C4E8649CD9ACF7CA0396</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>2B0C63D1BD98D3B5CE09F2C2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-Tests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>41680673197EF259D2201075</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Falcon/Pods-Falcon-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>481A9B23E116E78B57F72264</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>483C02EBEFABF4A9BB30556F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Falcon.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Falcon/Pods-Falcon.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52947E3570E8A04462585B82</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Tests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6003F581195388D10070C39A</key>
 		<dict>
 			<key>children</key>
@@ -32,6 +153,7 @@
 				<string>6003F5B5195388D20070C39A</string>
 				<string>6003F58C195388D20070C39A</string>
 				<string>6003F58B195388D20070C39A</string>
+				<string>BC55C1E499C11AED4ABEB368</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -126,6 +248,7 @@
 				<string>6003F590195388D20070C39A</string>
 				<string>6003F592195388D20070C39A</string>
 				<string>6003F58E195388D20070C39A</string>
+				<string>97AD5EF922CD19D36C7EB2E6</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -154,9 +277,11 @@
 			<string>6003F5BF195388D20070C39A</string>
 			<key>buildPhases</key>
 			<array>
+				<string>E92C2C0073EE9671E8E4C752</string>
 				<string>6003F586195388D20070C39A</string>
 				<string>6003F587195388D20070C39A</string>
 				<string>6003F588195388D20070C39A</string>
+				<string>41680673197EF259D2201075</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -208,6 +333,8 @@
 				<string>6003F58F195388D20070C39A</string>
 				<string>6003F591195388D20070C39A</string>
 				<string>6003F5AF195388D20070C39A</string>
+				<string>E1D95A529CFD32FE7FC7E9F4</string>
+				<string>2B0C63D1BD98D3B5CE09F2C2</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -549,6 +676,7 @@
 				<string>6003F5B0195388D20070C39A</string>
 				<string>6003F5B2195388D20070C39A</string>
 				<string>6003F5B1195388D20070C39A</string>
+				<string>A6E1DED8F149DF512DC943EF</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -574,9 +702,11 @@
 			<string>6003F5C2195388D20070C39A</string>
 			<key>buildPhases</key>
 			<array>
+				<string>481A9B23E116E78B57F72264</string>
 				<string>6003F5AA195388D20070C39A</string>
 				<string>6003F5AB195388D20070C39A</string>
 				<string>6003F5AC195388D20070C39A</string>
+				<string>1610C4E8649CD9ACF7CA0396</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -908,6 +1038,8 @@
 		</dict>
 		<key>6003F5C0195388D20070C39A</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>483C02EBEFABF4A9BB30556F</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -932,6 +1064,8 @@
 		</dict>
 		<key>6003F5C1195388D20070C39A</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9A343CF4AB1D708772ECFFC4</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -970,6 +1104,8 @@
 		</dict>
 		<key>6003F5C3195388D20070C39A</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>C94A280517BA12D9E40BC189</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -1005,6 +1141,8 @@
 		</dict>
 		<key>6003F5C4195388D20070C39A</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>52947E3570E8A04462585B82</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -1072,6 +1210,28 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>97AD5EF922CD19D36C7EB2E6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E1D95A529CFD32FE7FC7E9F4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9A343CF4AB1D708772ECFFC4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Falcon.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Falcon/Pods-Falcon.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>A4299AEA4A6FB7317153BD23</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1084,6 +1244,87 @@
 			<string>../README.md</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A6E1DED8F149DF512DC943EF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2B0C63D1BD98D3B5CE09F2C2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BC55C1E499C11AED4ABEB368</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>483C02EBEFABF4A9BB30556F</string>
+				<string>9A343CF4AB1D708772ECFFC4</string>
+				<string>C94A280517BA12D9E40BC189</string>
+				<string>52947E3570E8A04462585B82</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C94A280517BA12D9E40BC189</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Tests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E1D95A529CFD32FE7FC7E9F4</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-Falcon.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>E92C2C0073EE9671E8E4C752</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
