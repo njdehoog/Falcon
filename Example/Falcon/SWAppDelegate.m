@@ -14,21 +14,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [SWAPI getPeopleWithCompletion:^(NSArray *results, NSError *error) {
-        if (error) {
-            NSLog(@"Error getting people: %@", error);
-        }
-        else {
-            NSLog(@"people: %@", results);
-        }
-    }];
+//    [SWAPI getPeopleWithCompletion:^(SWResultSet *result, NSError *error) {
+//        if (error) {
+//            NSLog(@"Error getting people: %@", error);
+//        }
+//        else {
+//            NSLog(@"%ld people", [result.items count]);
+//        }
+//    }];
     
-    [SWAPI getPersonWithID:@"1" completion:^(NSDictionary *result, NSError *error) {
+    [SWAPI getPersonWithID:@"1" completion:^(SWResultSet *result, NSError *error) {
         if (error) {
             NSLog(@"Error getting person: %@", error);
         }
         else {
-            NSLog(@"person: %@", result);
+            NSLog(@"person: %@", [result.items firstObject]);
+            
+            SWPerson *person = [result.items firstObject];
+            [person getFilmsWithCompletion:^(SWResultSet *result, NSError *error) {
+                if (error) {
+                    NSLog(@"Error getting person: %@", error);
+                }
+                else {
+                    NSLog(@"films: %@", result.items);
+                }
+            }];
         }
     }];
     

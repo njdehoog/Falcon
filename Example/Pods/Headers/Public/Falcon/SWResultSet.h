@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/SWResultSet.h

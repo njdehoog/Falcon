@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+// Defines
+#import "SWDefines.h"
+
 // Model
 #import "SWPerson.h"
+#import "SWFilm.h"
 
-typedef void (^SWCompletionBlock)(id result, NSError *error);
+// Helpers
+#import "SWQuery.h"
+#import "SWQuerySet.h"
+#import "SWResultSet.h"
 
 @interface SWAPI : NSObject
 
@@ -19,7 +26,7 @@ typedef void (^SWCompletionBlock)(id result, NSError *error);
 /// @name Group resources
 ///-------------------------------------------------
 
-+ (NSURLSessionDataTask *)getPeopleWithCompletion:(SWCompletionBlock)completion;
++ (void)getPeopleWithCompletion:(SWCompletionBlock)completion;
 + (NSURLSessionDataTask *)getStarshipsWithCompletion:(SWCompletionBlock)completion;
 + (NSURLSessionDataTask *)getPlanetsWithCompletion:(SWCompletionBlock)completion;
 + (NSURLSessionDataTask *)getVehiclesWithCompletion:(SWCompletionBlock)completion;
@@ -30,8 +37,15 @@ typedef void (^SWCompletionBlock)(id result, NSError *error);
 /// @name Individual resources
 ///-------------------------------------------------
 
-+ (NSURLSessionDataTask *)getPersonWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
-+ (NSURLSessionDataTask *)getStarshipWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
++ (void)getPersonWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
+//+ (void)getStarshipWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
 
+
+///-------------------------------------------------
+/// @name Helpers
+///-------------------------------------------------
+
++ (void)performQuery:(SWQuery *)query completion:(SWCompletionBlock)completion;
++ (void)performQueriesInSet:(SWQuerySet *)querySet completion:(SWCompletionBlock)completion;
 
 @end
