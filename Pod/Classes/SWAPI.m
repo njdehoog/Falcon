@@ -10,41 +10,87 @@
 
 @implementation SWAPI
 
-// FIXME: this stuff should only exist in SWQuery
+#pragma mark - Collections
 
-static NSString *const kSWAPIBaseURL = @"http://swapi.co/api/";
-
-#pragma mark - Private methods
-
-+ (NSURL *)baseURL
++ (void)getPeopleWithCompletion:(SWCompletionBlock)completion
 {
-    return [NSURL URLWithString:kSWAPIBaseURL];
+    SWQuery *query = [SWQuery queryForCollectionWithPath:@"people" modelClass:[SWPerson class]];
+    [self performQuery:query completion:completion];
 }
+
++ (void)getStarshipsWithCompletion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForCollectionWithPath:@"starships" modelClass:[SWStarship class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getPlanetsWithCompletion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForCollectionWithPath:@"planets" modelClass:[SWPlanet class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getVehiclesWithCompletion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForCollectionWithPath:@"vehicles" modelClass:[SWVehicle class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getSpeciesWithCompletion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForCollectionWithPath:@"species" modelClass:[SWSpecies class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getFilmsWithCompletion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForCollectionWithPath:@"films" modelClass:[SWFilm class]];
+    [self performQuery:query completion:completion];
+}
+
+#pragma mark - Individual resources
+
++ (void)getPersonWithID:(NSString *)ID completion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"people/%@", ID] modelClass:[SWPerson class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getStarshipWithID:(NSString *)ID completion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"starships/%@", ID] modelClass:[SWStarship class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getPlanetWithID:(NSString *)ID completion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"planets/%@", ID] modelClass:[SWPlanet class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getVehicleWithID:(NSString *)ID completion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"vehicles/%@", ID] modelClass:[SWVehicle class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getSpeciesWithID:(NSString *)ID completion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"species/%@", ID] modelClass:[SWSpecies class]];
+    [self performQuery:query completion:completion];
+}
+
++ (void)getFilmWithID:(NSString *)ID completion:(SWCompletionBlock)completion
+{
+    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"films/%@", ID] modelClass:[SWFilm class]];
+    [self performQuery:query completion:completion];
+}
+
+#pragma mark - Helper methods
 
 + (NSURLSession *)URLsession
 {
     return [NSURLSession sharedSession];
-}
-
-+ (NSURLSessionDataTask *)getPath:(NSString *)path completion:(SWCompletionBlock)completion
-{
-    NSURL *URL = [NSURL URLWithString:path relativeToURL:[self baseURL]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    NSURLSessionDataTask *task = [[self URLsession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        id responseObject = nil;
-        if (!error) {
-            responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        }
-        
-        if (completion) {
-            completion(responseObject, error);
-        }
-    }];
-    
-    [task resume];
-    
-    return task;
 }
 
 + (NSURLSessionDataTask *)getURL:(NSURL *)URL completion:(SWCompletionBlock)completion
@@ -128,52 +174,5 @@ static NSString *const kSWAPIBaseURL = @"http://swapi.co/api/";
         }
     });
 }
-
-#pragma mark - Collections
-
-+ (void)getPeopleWithCompletion:(SWCompletionBlock)completion
-{
-    SWQuery *query = [SWQuery queryForCollectionWithPath:@"people" modelClass:[SWPerson class]];
-    [self performQuery:query completion:completion];
-}
-
-+ (NSURLSessionDataTask *)getStarshipsWithCompletion:(SWCompletionBlock)completion
-{
-    return [self getPath:@"starships" completion:completion];
-}
-
-+ (NSURLSessionDataTask *)getPlanetsWithCompletion:(SWCompletionBlock)completion
-{
-    return [self getPath:@"planets" completion:completion];
-}
-
-+ (NSURLSessionDataTask *)getVehiclesWithCompletion:(SWCompletionBlock)completion
-{
-    return [self getPath:@"vehicles" completion:completion];
-}
-
-+ (NSURLSessionDataTask *)getSpeciesWithCompletion:(SWCompletionBlock)completion
-{
-    return [self getPath:@"species" completion:completion];
-}
-
-+ (NSURLSessionDataTask *)getFilmsWithCompletion:(SWCompletionBlock)completion
-{
-    return [self getPath:@"films" completion:completion];
-}
-
-#pragma mark - Individual resources
-
-+ (void)getPersonWithID:(NSString *)ID completion:(SWCompletionBlock)completion
-{
-    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"people/%@", ID] modelClass:[SWPerson class]];
-    [self performQuery:query completion:completion];
-}
-
-//+ (void)getStarshipWithID:(NSString *)ID completion:(SWCompletionBlock)completion
-//{
-//    SWQuery *query = [SWQuery queryForObjectWithPath:[NSString stringWithFormat:@"starships/%@", ID] modelClass:[SWPerson class]];
-//    [self performQuery:query completion:completion];
-//}
 
 @end

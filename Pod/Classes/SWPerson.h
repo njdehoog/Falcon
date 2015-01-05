@@ -6,10 +6,9 @@
 //
 //
 
-#import "Mantle.h"
-#import "SWDefines.h"
+#import "SWModel.h"
 
-@interface SWPerson : MTLModel <MTLJSONSerializing>
+@interface SWPerson : SWModel
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *birthYear;
@@ -26,13 +25,9 @@
 @property (nonatomic, copy) NSArray *starships;
 @property (nonatomic, copy) NSArray *vehicles;
 
-@property (nonatomic, copy) NSString *URLString;
-@property (nonatomic, copy) NSDate *createdDate;
-@property (nonatomic, copy) NSDate *editedDate;
-
-
 - (void)getFilmsWithCompletion:(SWCompletionBlock)completion;
-//- (void)getSpeciesWithCompletion:(SWCompletionBlock)completion;
-
+- (void)getSpeciesWithCompletion:(SWCompletionBlock)completion;
+- (void)getStarshipsWithCompletion:(SWCompletionBlock)completion;
+- (void)getVehiclesWithCompletion:(SWCompletionBlock)completion;
 
 @end

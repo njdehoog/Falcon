@@ -14,6 +14,10 @@
 // Model
 #import "SWPerson.h"
 #import "SWFilm.h"
+#import "SWStarship.h"
+#import "SWPlanet.h"
+#import "SWVehicle.h"
+#import "SWSpecies.h"
 
 // Helpers
 #import "SWQuery.h"
@@ -27,19 +31,22 @@
 ///-------------------------------------------------
 
 + (void)getPeopleWithCompletion:(SWCompletionBlock)completion;
-+ (NSURLSessionDataTask *)getStarshipsWithCompletion:(SWCompletionBlock)completion;
-+ (NSURLSessionDataTask *)getPlanetsWithCompletion:(SWCompletionBlock)completion;
-+ (NSURLSessionDataTask *)getVehiclesWithCompletion:(SWCompletionBlock)completion;
-+ (NSURLSessionDataTask *)getSpeciesWithCompletion:(SWCompletionBlock)completion;
-+ (NSURLSessionDataTask *)getFilmsWithCompletion:(SWCompletionBlock)completion;
++ (void)getStarshipsWithCompletion:(SWCompletionBlock)completion;
++ (void)getPlanetsWithCompletion:(SWCompletionBlock)completion;
++ (void)getVehiclesWithCompletion:(SWCompletionBlock)completion;
++ (void)getSpeciesWithCompletion:(SWCompletionBlock)completion;
++ (void)getFilmsWithCompletion:(SWCompletionBlock)completion;
 
 ///-------------------------------------------------
 /// @name Individual resources
 ///-------------------------------------------------
 
 + (void)getPersonWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
-//+ (void)getStarshipWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
-
++ (void)getStarshipWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
++ (void)getPlanetWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
++ (void)getVehicleWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
++ (void)getSpeciesWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
++ (void)getFilmWithID:(NSString *)ID completion:(SWCompletionBlock)completion;
 
 ///-------------------------------------------------
 /// @name Helpers

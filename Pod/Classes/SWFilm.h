@@ -6,9 +6,9 @@
 //
 //
 
-#import "Mantle.h"
+#import "SWModel.h"
 
-@interface SWFilm : MTLModel <MTLJSONSerializing>
+@interface SWFilm : SWModel
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSNumber *episodeID;
@@ -19,13 +19,13 @@
 @property (nonatomic, copy) NSArray *species;
 @property (nonatomic, copy) NSArray *starships;
 @property (nonatomic, copy) NSArray *vehicles;
-@property (nonatomic, copy) NSArray *people;
+@property (nonatomic, copy) NSArray *characters;
 @property (nonatomic, copy) NSArray *planets;
 
-@property (nonatomic, copy) NSString *URL;
-
-@property (nonatomic, copy) NSString *URLString;
-@property (nonatomic, copy) NSDate *createdDate;
-@property (nonatomic, copy) NSDate *editedDate;
+- (void)getSpeciesWithCompletion:(SWCompletionBlock)completion;
+- (void)getStarshipsWithCompletion:(SWCompletionBlock)completion;
+- (void)getVehiclesWithCompletion:(SWCompletionBlock)completion;
+- (void)getCharactersWithCompletion:(SWCompletionBlock)completion;
+- (void)getPlanetsWithCompletion:(SWCompletionBlock)completion;
 
 @end
