@@ -42,7 +42,7 @@
 //        }
 //    }];
     
-    [SWAPI getStarshipWithID:@"1" completion:^(SWResultSet *result, NSError *error) {
+    [SWAPI getStarshipWithID:@"10" completion:^(SWResultSet *result, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
         }

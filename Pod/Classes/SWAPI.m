@@ -111,7 +111,7 @@
         NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
         if (![[self acceptableStatusCodes] containsIndex:statusCode]) {
             NSDictionary *userInfo = @{
-                                       NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Request failed with status code %ld: %@", statusCode, [NSHTTPURLResponse localizedStringForStatusCode:statusCode]],
+                                       NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Request failed with status code %ld: %@", (long)statusCode, [NSHTTPURLResponse localizedStringForStatusCode:statusCode]],
                                        NSURLErrorFailingURLErrorKey: [response URL]
                                        };
             
@@ -147,7 +147,6 @@
             if (query.isCollection) {
                 NSString *nextURLString = result[@"next"];
                 if (nextURLString && ![nextURLString isKindOfClass:[NSNull class]]) {
-                    NSLog(@"next url string: %@", nextURLString);
                     finished = NO;
                     SWQuery *nextQuery = [SWQuery queryForURLString:nextURLString modelClass:query.modelClass];
                     nextQuery.result = query.result;
