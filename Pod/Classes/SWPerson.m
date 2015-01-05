@@ -36,6 +36,12 @@
 
 #pragma mark - Relationships
 
+- (void)getHomeworldWithCompletion:(SWCompletionBlock)completion
+{
+    SWQuerySet *querySet = [SWQuerySet querySetWithURLStrings:@[self.homeworld] modelClass:[SWPlanet class]];
+    [SWAPI performQueriesInSet:querySet completion:completion];
+}
+
 - (void)getFilmsWithCompletion:(SWCompletionBlock)completion;
 {
     SWQuerySet *querySet = [SWQuerySet querySetWithURLStrings:self.films modelClass:[SWFilm class]];

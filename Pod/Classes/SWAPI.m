@@ -157,7 +157,9 @@
         }
         
         if (finished && completion) {
-            completion(query.result, error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(query.result, error);
+            });
         }
     }];
 }

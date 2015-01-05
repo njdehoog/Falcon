@@ -6,17 +6,38 @@ PODS:
   - Mantle (1.5.1):
     - Mantle/extobjc (= 1.5.1)
   - Mantle/extobjc (1.5.1)
+  - MRProgress/ActivityIndicator (0.8.1):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.1):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.1):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.1)
+  - MRProgress/Icons (0.8.1)
+  - MRProgress/Overlay (0.8.1):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.1)
+  - MRProgress/Stopable (0.8.1):
+    - MRProgress/Helper
 
 DEPENDENCIES:
   - Falcon (from `../`)
+  - MRProgress/Overlay (~> 0.8)
 
 EXTERNAL SOURCES:
   Falcon:
     :path: ../
 
 SPEC CHECKSUMS:
-  Falcon: 965cd7c254658b81f1e2eb8f208750a678b1ff84
+  Falcon: 926bf8da0427acaa22ad641ba95ec55b304e9759
   ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
+  MRProgress: cd12726e001ea25dec133322d34cc4754cbc58f8
 
 COCOAPODS: 0.35.0

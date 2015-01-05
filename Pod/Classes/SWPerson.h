@@ -18,13 +18,14 @@
 @property (nonatomic, copy) NSString *height;
 @property (nonatomic, copy) NSString *mass;
 @property (nonatomic, copy) NSString *skinColor;
-@property (nonatomic, copy) NSString *homeworld;
 
+@property (nonatomic, copy) NSString *homeworld;
 @property (nonatomic, copy) NSArray *films;
 @property (nonatomic, copy) NSArray *species;
 @property (nonatomic, copy) NSArray *starships;
 @property (nonatomic, copy) NSArray *vehicles;
 
+- (void)getHomeworldWithCompletion:(SWCompletionBlock)completion;
 - (void)getFilmsWithCompletion:(SWCompletionBlock)completion;
 - (void)getSpeciesWithCompletion:(SWCompletionBlock)completion;
 - (void)getStarshipsWithCompletion:(SWCompletionBlock)completion;

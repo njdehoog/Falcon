@@ -19,11 +19,12 @@
 @property (nonatomic, copy) NSString *hairColors;
 @property (nonatomic, copy) NSString *skinColors;
 @property (nonatomic, copy) NSString *language;
-@property (nonatomic, copy) NSString *homeworld;
 
+@property (nonatomic, copy) NSString *homeworld;
 @property (nonatomic, copy) NSArray *people;
 @property (nonatomic, copy) NSArray *films;
 
+- (void)getHomeworldWithCompletion:(SWCompletionBlock)completion;
 - (void)getPeopleWithCompletion:(SWCompletionBlock)completion;
 - (void)getFilmsWithCompletion:(SWCompletionBlock)completion;
 

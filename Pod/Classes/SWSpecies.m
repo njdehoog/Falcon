@@ -35,6 +35,12 @@
 
 #pragma mark - Relationships
 
+- (void)getHomeworldWithCompletion:(SWCompletionBlock)completion
+{
+    SWQuerySet *querySet = [SWQuerySet querySetWithURLStrings:@[self.homeworld] modelClass:[SWPlanet class]];
+    [SWAPI performQueriesInSet:querySet completion:completion];
+}
+
 - (void)getPeopleWithCompletion:(SWCompletionBlock)completion
 {
     SWQuerySet *querySet = [SWQuerySet querySetWithURLStrings:self.people modelClass:[SWPerson class]];
