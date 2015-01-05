@@ -23,20 +23,39 @@
 //        }
 //    }];
     
-    [SWAPI getPersonWithID:@"1" completion:^(SWResultSet *result, NSError *error) {
+//    [SWAPI getPersonWithID:@"1" completion:^(SWResultSet *result, NSError *error) {
+//        if (error) {
+//            NSLog(@"Error getting person: %@", error);
+//        }
+//        else {
+//            NSLog(@"person: %@", [result.items firstObject]);
+//            
+//            SWPerson *person = [result.items firstObject];
+//            [person getFilmsWithCompletion:^(SWResultSet *result, NSError *error) {
+//                if (error) {
+//                    NSLog(@"Error getting person: %@", error);
+//                }
+//                else {
+//                    NSLog(@"films: %@", result.items);
+//                }
+//            }];
+//        }
+//    }];
+    
+    [SWAPI getStarshipWithID:@"1" completion:^(SWResultSet *result, NSError *error) {
         if (error) {
-            NSLog(@"Error getting person: %@", error);
+            NSLog(@"Error: %@", error);
         }
         else {
-            NSLog(@"person: %@", [result.items firstObject]);
+            NSLog(@"starship: %@", [result.items firstObject]);
             
-            SWPerson *person = [result.items firstObject];
-            [person getFilmsWithCompletion:^(SWResultSet *result, NSError *error) {
+            SWStarship *starship = [result.items firstObject];
+            [starship getPilotsWithCompletion:^(SWResultSet *result, NSError *error) {
                 if (error) {
-                    NSLog(@"Error getting person: %@", error);
+                    NSLog(@"Error: %@", error);
                 }
                 else {
-                    NSLog(@"films: %@", result.items);
+                    NSLog(@"pilots: %@", result.items);
                 }
             }];
         }

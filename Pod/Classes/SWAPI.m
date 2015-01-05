@@ -93,14 +93,29 @@
     return [NSURLSession sharedSession];
 }
 
++ (NSIndexSet *)acceptableStatusCodes
+{
+    return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
+}
+
 + (NSURLSessionDataTask *)getURL:(NSURL *)URL completion:(SWCompletionBlock)completion
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURLSessionDataTask *task = [[self URLsession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         id responseObject = nil;
-        if (!error) {
+        if (!error && data) {
             responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        }
+        
+        NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+        if (![[self acceptableStatusCodes] containsIndex:statusCode]) {
+            NSDictionary *userInfo = @{
+                                       NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Request failed with status code %ld: %@", statusCode, [NSHTTPURLResponse localizedStringForStatusCode:statusCode]],
+                                       NSURLErrorFailingURLErrorKey: [response URL]
+                                       };
+            
+            error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadServerResponse userInfo:userInfo];
         }
         
         if (completion) {
