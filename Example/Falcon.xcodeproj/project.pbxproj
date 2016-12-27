@@ -23,6 +23,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		8352075A7BF71385F831270E /* libPods-Falcon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D33D5F05918ADD5CECD169 /* libPods-Falcon.a */; };
 		93A6F54F8D5A125E1AA18A47 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2F5A573CCAEE0B28BCD4A1 /* libPods-Tests.a */; };
+		FD0867C11E127244002E6C21 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0867C01E127244002E6C21 /* Launch Screen.storyboard */; };
 		FDC6B3E81A5AE26F0069904E /* SWFilmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC6B3E71A5AE26F0069904E /* SWFilmViewController.m */; };
 		FDC6B3EB1A5AEF8E0069904E /* SWSpeciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC6B3EA1A5AEF8E0069904E /* SWSpeciesViewController.m */; };
 		FDC6B3EE1A5AF41C0069904E /* SWStarshipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC6B3ED1A5AF41C0069904E /* SWStarshipsViewController.m */; };
@@ -72,6 +73,7 @@
 		BD2F5A573CCAEE0B28BCD4A1 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4FDC3EACCC84DF552D92FE /* Pods-Falcon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Falcon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Falcon/Pods-Falcon.release.xcconfig"; sourceTree = "<group>"; };
 		EF57074341D567A16492A3D9 /* Pods-Falcon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Falcon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Falcon/Pods-Falcon.debug.xcconfig"; sourceTree = "<group>"; };
+		FD0867C01E127244002E6C21 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FDC6B3E61A5AE26F0069904E /* SWFilmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFilmViewController.h; sourceTree = "<group>"; };
 		FDC6B3E71A5AE26F0069904E /* SWFilmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFilmViewController.m; sourceTree = "<group>"; };
 		FDC6B3E91A5AEF8E0069904E /* SWSpeciesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSpeciesViewController.h; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				6003F59C195388D20070C39A /* SWAppDelegate.h */,
 				6003F59D195388D20070C39A /* SWAppDelegate.m */,
 				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
+				FD0867C01E127244002E6C21 /* Launch Screen.storyboard */,
 				6003F5A5195388D20070C39A /* SWRootViewController.h */,
 				6003F5A6195388D20070C39A /* SWRootViewController.m */,
 				FDC6B3E61A5AE26F0069904E /* SWFilmViewController.h */,
@@ -315,6 +318,7 @@
 			files = (
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,
+				FD0867C11E127244002E6C21 /* Launch Screen.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,7 +578,6 @@
 			baseConfigurationReference = EF57074341D567A16492A3D9 /* Pods-Falcon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A9NP4475VH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Falcon/Falcon-Prefix.pch";
@@ -591,7 +594,6 @@
 			baseConfigurationReference = CE4FDC3EACCC84DF552D92FE /* Pods-Falcon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A9NP4475VH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Falcon/Falcon-Prefix.pch";
