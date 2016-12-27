@@ -1,10 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'Falcon', :exclusive => true do
+target 'Falcon' do
   pod "Falcon", :path => "../"
   pod 'MRProgress/Overlay', '~> 0.8'
 end
 
-target 'Tests', :exclusive => true do
+target 'Tests' do
   pod "Falcon", :path => "../"  
 end
